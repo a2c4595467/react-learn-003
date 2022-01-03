@@ -1,12 +1,33 @@
-import { useParams, useLocation } from "react-router-dom";
+/**
+ * URLパラメータ、GETパラメータを扱う
+ */
+import {
+  useParams, // URLパラメータ
+  useLocation // 現在のロケーションを返すフック
+} from "react-router-dom";
 
 export const UrlParamater = () => {
+  // -------------------------------------------
+  // URLパラメータ
+  // -------------------------------------------
+  // ルーティングのpath内で指定した「:id」にマッチした部分
   const { id } = useParams();
-  const { search } = useLocation();
-  console.log(search);
 
+  // -------------------------------------------
+  // クエリストリング
+  // -------------------------------------------
+  // useLocationで取得できるオブジェクトの中から"search"を抽出する
+  const { search } = useLocation();
+
+  // locationオブジェクトに含まれる項目
+  //   ... pathname,search,hash,state,key
+  // const loc = useLocation();
+  // console.log(loc);
+
+  // URLクエリストリングを主力する
   const query = new URLSearchParams(search);
-  console.log(query);
+  //  console.log({ query: query });
+
   return (
     <div>
       <h1>UrlParamaterページ</h1>

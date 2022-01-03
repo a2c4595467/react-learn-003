@@ -4,9 +4,12 @@ export const Page1DetailA = () => {
   const state = useLocation();
   console.log(state);
 
+  // 履歴を取得
   const history = useHistory();
 
+  // もどるボタンの動作
   const onClickBack = () => {
+    // 履歴の中から戻る
     history.goBack();
   };
 

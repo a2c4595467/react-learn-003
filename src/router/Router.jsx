@@ -1,8 +1,16 @@
 import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
+
+// HOMEページのコンポーネント
 import { Home } from "../Home";
-import { Page404 } from "../Page404";
+
+// ページ１に関するルーティング
 import { page1Routes } from "./Page1Routes";
+
+// ページ２に関するルーティング
 import { page2Routes } from "./Page2Routes";
+
+// 404ページのコンポーネント
+import { Page404 } from "../Page404";
 
 export const Router = () => {
   return (
@@ -16,6 +24,7 @@ export const Router = () => {
         <br />
       </div>
 
+      {/* 下記に各コンポーネントを表示させる */}
       <Switch>
         <Route exact path="/">
           <Home />
@@ -52,6 +61,7 @@ export const Router = () => {
             </Switch>
           )}
         />
+        {/* Switchの上から走査し、どれも当てはまらない場合に遷移する */}
         <Route path="*">
           <Page404 />
         </Route>

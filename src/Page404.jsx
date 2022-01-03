@@ -1,4 +1,8 @@
+/**
+ * 見つかりません(404)ページの作成
+ */
 import { Link } from "react-router-dom";
+
 export const Page404 = () => {
   return (
     <div>
